@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.fuelconsumptioncalculator.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<VBox alignment="CENTER" prefHeight="459.0" prefWidth="233.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.example.fuelconsumptioncalculator.HelloController">
+    <!-- Distance input -->
+    <Label fx:id="distanceLabel" text="Distance (km)" />
+    <TextField fx:id="distanceField" minWidth="80.0" prefHeight="26.0" prefWidth="80.0" />
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <!-- Fuel input -->
+    <Label fx:id="fuelUsedLabel" text="Fuel Used (liters)" />
+    <TextField fx:id="fuelUsedField" prefWidth="160" />
+
+    <!-- Result label and field for error handling -->
+    <Label fx:id="resultLabel" text="Result:" />
+    <TextField fx:id="invalidField" prefWidth="160" visible="false" /> <!-- For showing invalid input message if needed -->
+
+    <!-- Calculate button -->
+    <Button fx:id="calculateButton" onAction="#calculateFuelConsumption" text="Calculate" />
+
+    <!-- Language buttons -->
+    <Button fx:id="enButton" onAction="#switchToEnglish" text="EN" />
+    <Button fx:id="frButton" onAction="#switchToFrench" text="FR" />
+    <Button fx:id="jpButton" onAction="#switchToJapanese" text="JP" />
+    <Button fx:id="irButton" onAction="#switchToPersian" text="IR" />
 </VBox>
